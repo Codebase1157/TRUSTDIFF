@@ -1,0 +1,17 @@
+Figure files in bundle/figures/ against the figure numbers used in the manuscript.
+The file names keep the numbering of the earlier draft; the manuscript was
+renumbered when the Chikusei and XDU-Liyukou datasets were removed.
+
+  fig04_cnc_construction    -> Fig. 4   CNC-Bench construction
+  fig05_houston_qualitative -> Fig. 5   Houston visual comparison
+  fig06_pavia_qualitative   -> Fig. 6   Pavia visual comparison
+  fig10_spectral_fidelity   -> Fig. 7   spectral fidelity
+  fig11_cnc_sweep           -> Fig. 8   CNC-Bench sweep over zeta
+  fig13_reliability         -> Fig. 9   reliability as a detector
+  fig14_ablation            -> Fig. 10  ablation dot plot
+  fig15_correspondence      -> Fig. 11  correspondence visualisation
+  fig17_parameters          -> Fig. 13  parameter sensitivity
+  fig18_runtime             -> Fig. 14  cost against reference size
+  fig19_classification      -> Fig. 15  downstream classification
+
+Figs. 1, 2, 3 and 12 are the authors' own schematics and were not regenerated.

@@ -1,0 +1,6 @@
+method,OA,AA,kappa,OA_in_nc,PSNR,SAM
+HR ground truth,88.28,81.38,0.8658,87.57,nan,nan
+Bicubic,90.38,83.97,0.8904,88.98,31.916,2.746
+No-reference (A0),91.17,87.10,0.8994,91.20,33.477,2.342
+"Argmax, always transfer",73.00,66.51,0.6874,78.17,28.671,3.713
+TRUST-Diff,73.26,65.89,0.6904,79.84,28.630,3.679
