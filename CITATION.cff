@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: If you use this software, please cite the article below.
+title: "TRUST-Diff: structure-aware partial-correspondence posterior diffusion for unpaired reference-based hyperspectral image super-resolution"
+abstract: >-
+  Reference implementation of TRUST-Diff, which treats unpaired
+  reference-based hyperspectral image super-resolution as joint posterior
+  inference over the image, a partial correspondence and the inter-sensor
+  spectral response.
+version: 1.0.0
+license: MIT
+type: software
+authors:
+  - family-names: "[Family]"
+    given-names: "[Given]"
+    affiliation: "[Institution]"
+preferred-citation:
+  type: article
+  title: "TRUST-Diff: structure-aware partial-correspondence posterior diffusion for unpaired reference-based hyperspectral image super-resolution"
+  journal: "Pattern Analysis and Applications"
+  year: 2026
+  authors:
+    - family-names: "[Family]"
+      given-names: "[Given]"
