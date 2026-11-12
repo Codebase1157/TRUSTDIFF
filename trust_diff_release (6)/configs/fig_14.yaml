@@ -1,0 +1,24 @@
+# Fig. 14 — Cost against reference size (GPU wall-clock)
+# Hardware-dependent and fully deterministic in time, so seed 0 only.
+extends: _base.yaml
+
+item: "Fig. 14"
+model_configuration: "Complete (GPU)"
+seeds: [0]
+
+datasets:
+  test_tiles: [houston_2013]
+
+benchmark:
+  sweep_reference_size_px: [64, 128, 256, 512, 1024]
+  repetitions_per_size: 10
+  gpu_only: true
+  measured:
+    - fugw_solve_ms
+    - region_graph_build_ms
+    - forward_step_ms
+    - total_sampling_s
+
+outputs:
+  fig14: figures/fig14_cost_vs_reference_size.png
+  table_runtime: tables/fig14_runtime.csv

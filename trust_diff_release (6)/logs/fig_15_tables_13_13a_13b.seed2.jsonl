@@ -1,0 +1,38 @@
+{
+  "base_config_sha256": "a12a7cd8a4ff49cada761132e1aa143e1ec84d71edbb3f43cf6cb6c3e32236e4",
+  "checkpoints": {
+    "encoder_tpc.pt": "0518f10a2868f1b0e0f5d2263e525dfbd6a73d0c5d7a0f06053b9d3deb32fed9",
+    "prior_io_inflated.pt": "fdd42e3b2c5f01bf6ed4a61cb661f4be61fdacb04694fc8a55a7ccb31bebefe4"
+  },
+  "command_line": "python scripts/regenerate.py --config configs/fig_15_tables_13_13a_13b.yaml --seed 2 --out out/fig_15_tables_13_13a_13b/seed2/",
+  "config_file": "configs/fig_15_tables_13_13a_13b.yaml",
+  "config_sha256": "eee2169ab547f1c368e9582c0b59acb6956be9a171d5cde867ba0adb05bb0dc6",
+  "elapsed_seconds": 1139,
+  "ended_at_utc": "2026-11-12T16:23:59+00:00",
+  "environment": {
+    "cuda": "12.1",
+    "gpu": "NVIDIA RTX 6000 Ada (24 GB)",
+    "os": "Linux 6.18.44-fc-v378",
+    "pot": "0.9",
+    "python": "3.11.9",
+    "pytorch": "2.2"
+  },
+  "git_commit": "trust_diff@3f7c9a2e (release 2026-11-12)",
+  "item": "fig_15_tables_13_13a_13b",
+  "metrics": {
+    "indian_pines": {
+      "a0_trust_diff_no_reference": {
+        "kappa": 0.796,
+        "oa": 0.806
+      },
+      "trust_diff_complete": {
+        "kappa": 0.605,
+        "oa": 0.631
+      }
+    }
+  },
+  "model_configuration": "Complete",
+  "schema": "trust_diff.run_log/v1",
+  "seed": 2,
+  "started_at_utc": "2026-11-12T16:05:00+00:00"
+}

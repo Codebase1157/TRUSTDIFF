@@ -1,0 +1,38 @@
+# Figs. 8, 9 — CNC-Bench sweep and transport-mass reliability
+# Sweeps non-correspondence fraction zeta in {0, 0.1, 0.2, 0.4, 0.6, 0.8}
+# plus the reference-swap test. TRUST-Diff RIH rises 0.014 -> 0.027.
+# NOTE: Fig. 8 in the manuscript was produced in the reduced setting of
+# Sect. 5.5.3; the regenerated run uses the complete model.
+extends: _base.yaml
+
+item: "Figs. 8, 9"
+model_configuration: "Complete"
+seeds: [0, 1, 2]
+
+datasets:
+  test_tiles: [houston_2013]
+
+cnc_bench:
+  zeta_grid: [0.0, 0.1, 0.2, 0.4, 0.6, 0.8]
+  reference_swap_test: true
+  mask_source: scripts/cnc_bench/generate_masks.py
+
+methods_compared:
+  - datsr
+  - mfme_diffnet
+  - trust_diff_complete
+  - A0_trust_diff_no_reference
+
+metrics:
+  psnr: true
+  rih: true
+  rg: true
+  sds_tolerance:               # max reported seed std dev
+    psnr_dB: 0.14
+    rg_dB: 0.09
+    rih: 0.003
+
+outputs:
+  fig8: figures/fig8_cnc_sweep.png
+  fig9: figures/fig9_transport_mass_reliability.png
+  table7: tables/table7_cnc_bench.csv

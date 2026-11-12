@@ -1,0 +1,35 @@
+{
+  "base_config_sha256": "a12a7cd8a4ff49cada761132e1aa143e1ec84d71edbb3f43cf6cb6c3e32236e4",
+  "checkpoints": "none",
+  "command_line": "python scripts/regenerate.py --config configs/suppl_sec_s_i.yaml --seed 0 --out out/suppl_sec_s_i/seed0/",
+  "config_file": "configs/suppl_sec_s_i.yaml",
+  "config_sha256": "a2697675fbea5bfb1b214e4180a4be142e17e6bc841c18dfbd18248ef51e0cf6",
+  "elapsed_seconds": 1117,
+  "ended_at_utc": "2026-11-12T19:18:37+00:00",
+  "environment": {
+    "cuda": "12.1",
+    "gpu": "NVIDIA RTX 6000 Ada (24 GB)",
+    "os": "Linux 6.18.44-fc-v378",
+    "pot": "0.9",
+    "python": "3.11.9",
+    "pytorch": "2.2"
+  },
+  "git_commit": "trust_diff@3f7c9a2e (release 2026-11-12)",
+  "item": "suppl_sec_s_i",
+  "metrics": {
+    "note": "guided-filter denoiser + hand-crafted descriptors",
+    "reduced_setting": true,
+    "rg_at_zeta": {
+      "0.0": -0.42,
+      "0.1": -0.48,
+      "0.2": -0.55,
+      "0.4": -0.66,
+      "0.6": -0.78,
+      "0.8": -0.91
+    }
+  },
+  "model_configuration": "Reduced: guided-filter denoiser + hand-crafted descriptors",
+  "schema": "trust_diff.run_log/v1",
+  "seed": 0,
+  "started_at_utc": "2026-11-12T19:00:00+00:00"
+}
