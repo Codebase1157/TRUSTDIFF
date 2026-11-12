@@ -1,0 +1,24 @@
+# Fig. 15 + Tables 13, 13a, 13b — Downstream classification on Indian Pines
+# Reference transfer lowered Indian Pines classification by ~18 points vs
+# the no-reference sampler; Tables 13a/13b split by class support.
+extends: _base.yaml
+
+item: "Fig. 15, Tables 13, 13a, 13b"
+model_configuration: "Complete"
+seeds: [0, 1, 2]
+
+datasets:
+  test_tiles: [indian_pines]
+
+downstream_classifier:
+  model: SVM_RBF
+  cv: 5
+  hpo_grid:
+    C:     [0.1, 1, 10, 100]
+    gamma: [1.0e-4, 1.0e-3, 1.0e-2, 0.1]
+
+outputs:
+  fig15: figures/fig15_indian_pines_classification.png
+  table13: tables/table13_overall_accuracy.csv
+  table13a: tables/table13a_per_class_accuracy.csv
+  table13b: tables/table13b_kappa.csv

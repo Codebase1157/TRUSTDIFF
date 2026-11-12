@@ -1,0 +1,32 @@
+# Tables 5–12 — Submitted reconstruction tables (PSNR / SSIM / SAM / ERGAS /
+# CC / RMSE) on Houston + Pavia + Indian Pines. Reproduces the "as submitted"
+# numbers of the full pipeline.
+extends: _base.yaml
+
+item: "Tables 5–12"
+model_configuration: "Complete (as submitted)"
+seeds: [0, 1, 2]
+
+datasets:
+  test_tiles: [houston_2013, pavia_university, indian_pines]
+
+methods_compared:
+  - bicubic
+  - datsr
+  - mfme_diffnet
+  - a0_trust_diff_no_reference
+  - trust_diff_complete
+
+metrics:
+  - psnr
+  - ssim
+  - sam
+  - ergas
+  - cc
+  - rmse
+  - e_lr                          # LR consistency, Proposition 1
+  - rg                            # reference gain
+
+outputs:
+  tables_dir: tables/tables_5_12/
+  mean_std_report: tables/tables_5_12/mean_std.csv

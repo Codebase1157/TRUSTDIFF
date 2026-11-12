@@ -1,0 +1,32 @@
+{
+  "base_config_sha256": "a12a7cd8a4ff49cada761132e1aa143e1ec84d71edbb3f43cf6cb6c3e32236e4",
+  "checkpoints": {
+    "encoder_tpc.pt": "0518f10a2868f1b0e0f5d2263e525dfbd6a73d0c5d7a0f06053b9d3deb32fed9",
+    "prior_io_inflated.pt": "fdd42e3b2c5f01bf6ed4a61cb661f4be61fdacb04694fc8a55a7ccb31bebefe4"
+  },
+  "command_line": "python scripts/regenerate.py --config configs/figs_1_2.yaml --seed 0 --out out/figs_1_2/seed0/",
+  "config_file": "configs/figs_1_2.yaml",
+  "config_sha256": "f71eb757291a93105e02701c525f0ec1fb687efcb5688f7ddede8a9ca353b0d4",
+  "elapsed_seconds": 1117,
+  "ended_at_utc": "2026-11-12T09:18:37+00:00",
+  "environment": {
+    "cuda": "12.1",
+    "gpu": "NVIDIA RTX 6000 Ada (24 GB)",
+    "os": "Linux 6.18.44-fc-v378",
+    "pot": "0.9",
+    "python": "3.11.9",
+    "pytorch": "2.2"
+  },
+  "git_commit": "trust_diff@3f7c9a2e (release 2026-11-12)",
+  "item": "figs_1_2",
+  "metrics": {
+    "auroc_during_sampling": 0.858,
+    "auroc_region_graph_on_gt": 0.915,
+    "mean_m_corresponding": 0.54,
+    "mean_m_noncorresponding": 0.24
+  },
+  "model_configuration": "Complete: prior [15] + TPC encoder",
+  "schema": "trust_diff.run_log/v1",
+  "seed": 0,
+  "started_at_utc": "2026-11-12T09:00:00+00:00"
+}

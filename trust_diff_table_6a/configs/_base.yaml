@@ -1,0 +1,93 @@
+# TRUST-Diff — base configuration (Table 3 defaults)
+# This file is inherited by every per-item config in configs/*.yaml via
+# the `extends: _base.yaml` key. Values here are frozen across all runs
+# of the complete model; items override only what differs.
+
+model:
+  name: TRUST-Diff
+  variant: complete                 # {complete, reduced_sect_5_5_3}
+
+spectral_subspace:
+  k: 8                              # leading left singular vectors of X
+  k_variant_rgb_prior: 3            # legacy k=3 variant reused by Suppl. S-I
+
+prior:
+  denoiser: ADM_256x256_uncond      # Dhariwal & Nichol 2021, frozen
+  params: 553.8M
+  checkpoint_name: "256x256_diffusion_uncond"
+  inflate_io_to_k_channels: true
+  finetune:
+    layers: [input_conv, output_conv]
+    data: unlabeled_RGB_MSI_tiles_disjoint_from_test
+    iterations: 40000
+  input_channel_normalization: per_channel_zero_mean_unit_variance
+
+sampler:
+  type: DDIM
+  steps_T: 100
+  eta_ddim: 0.85
+
+guidance:
+  eta_t_formula: "0.05 * sqrt(1 - alpha_bar_t)"
+  lambda_t_noise_free: 1.0
+  lambda_t_sigma_gt_0: 0.95
+  gradient_normalization_eta0: 1.0e-3
+
+refresh:
+  period_M: 10
+  first_refresh_at_t: 90
+
+encoder_gnn:
+  L_blocks: 3
+  width: 128
+  k_candidates_ann: 16
+
+reference_pyramid:
+  relative_scales: "rho_l = 2^(l/4), l = -4..4"
+  l_range: [-4, 4]
+  step: 0.25                        # quarter-octave
+
+fugw_transport:
+  epsilon: 0.1                      # entropic regularization
+  tau: 0.15                         # mass abstention
+  alpha: 0.5                        # feature/structure balance
+  iters_block_I_b: 20
+  iters_sinkhorn_I_s: 30
+  warm_start: true
+
+posterior_samples:
+  K: 8
+
+tpc_training:
+  optimizer: Adam
+  epochs: 60
+  batch_size: 16
+  learning_rate: 2.0e-4
+  unroll_depth_L_s: 15
+  checkpoint_selection: best_validation_PCK
+  typical_best_epoch_range: [38, 45]
+
+datasets:
+  houston_2013:
+    sensor: CASI
+    bands: 144
+    wavelength_nm: [380, 1050]
+  pavia_university:
+    sensor: ROSIS
+  indian_pines:
+    sensor: AVIRIS
+    bands: 200
+
+environment:
+  pytorch: "2.2"
+  pot: "0.9"
+  cuda: "12.1"
+  gpu_memory_GB: 24
+  os: "Linux 6.18.44-fc-v378"
+
+statistics:
+  statistical_test: paired_Wilcoxon_signed_rank_over_test_tiles
+
+provenance:
+  released_script: scripts/regenerate.py
+  hash_truncation_in_print: 12

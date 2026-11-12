@@ -1,0 +1,26 @@
+# Fig. 7 — Spectral fidelity on Houston 2013
+# Probe pixels auto-selected as the most homogeneous of (vegetation, bright
+# roof, asphalt). Mean SAM targets: 5.89° bicubic, 5.52° argmax, 5.49° TRUST-Diff.
+# ERGAS Houston 4.68 vs 0.74; Pavia 5.58 vs 1.83 (Table 6).
+extends: _base.yaml
+
+item: "Fig. 7"
+model_configuration: "Complete"
+seeds: [0, 1, 2]
+
+datasets:
+  test_tiles: [houston_2013, pavia_university]
+
+probe_selection:
+  method: most_homogeneous_pixel_of_landcover_patch
+  covers: [vegetation, bright_roof, asphalt]
+
+metrics:
+  spectral_angle_mapper: true
+  ergas: true
+  rel_lr_consistency_target: 1.67e-2   # both reference-based variants
+
+outputs:
+  fig7_panels_a_to_c: figures/fig7_probe_spectra.png
+  fig7_panel_d: figures/fig7_sam_maps.png
+  numeric_panel: tables/fig7_sam_ergas_summary.csv
